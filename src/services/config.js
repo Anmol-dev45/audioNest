@@ -125,12 +125,12 @@ class Service {
     }
   }
 
-  uploadAudio(audio) {
-    return this.#uploadFile(audio, conf.appwriteAudioBucketId);
+  async uploadAudio(audio) {
+    return await this.#uploadFile(audio, conf.appwriteAudioBucketId);
   }
 
-  uploadImage(image) {
-    return this.#uploadFile(image, conf.appwriteImageBucketId);
+  async uploadImage(image) {
+    return await this.#uploadFile(image, conf.appwriteImageBucketId);
   }
 
   async getAudio(id) {

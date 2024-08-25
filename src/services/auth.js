@@ -21,7 +21,7 @@ class Auth {
         name
       );
       if (currentUser) {
-        await this.login({ email, password });
+        return await this.login({ email, password });
       }
       return currentUser;
     } catch (error) {
@@ -56,5 +56,4 @@ class Auth {
 
 const authService = new Auth();
 
-export { Auth };
 export default authService;
