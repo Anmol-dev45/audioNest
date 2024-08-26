@@ -2,7 +2,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Home } from "./pages";
+import { Home, UploadPodcast } from "./pages";
 import Login from "./pages/Login.jsx";
 import Signup from "./pages/Signup.jsx";
 import { Provider } from "react-redux";
@@ -23,11 +23,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <Login />,
+        element: (
+          <AuthLayout authentication={false}>
+            <Login />,
+          </AuthLayout>
+        ),
       },
       {
         path: "/signup",
-        element: <Signup />,
+        element: (
+          <AuthLayout authentication={false}>
+            <Signup />,
+          </AuthLayout>
+        ),
+      },
+      {
+        path: "/upload",
+        element: (
+          <AuthLayout authentication={true}>
+            <UploadPodcast />,
+          </AuthLayout>
+        ),
       },
     ],
   },

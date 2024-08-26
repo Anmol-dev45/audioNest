@@ -11,11 +11,16 @@ const Input = ({ label, type = "text", className = "", ...props }, ref) => {
           <span className="label-text font-medium">{label}</span>
         </label>
       )}
+
       <input
         id={id}
         type={type}
         ref={ref}
-        className={`input input-bordered input-primary w-full ${className}`}
+        className={`${
+          type === "file"
+            ? "file-input file-input-bordered"
+            : "input input-bordered input-primary"
+        } w-full ${className}`}
         {...props}
       />
     </div>

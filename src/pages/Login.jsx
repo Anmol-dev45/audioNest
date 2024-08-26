@@ -3,11 +3,9 @@ import { AuthLayout, Login as Form } from "../components";
 
 const Login = () => {
   return (
-    <AuthLayout authentication={false}>
-      <div className="py-12">
-        <Form />
-      </div>
-    </AuthLayout>
+    <div className="py-12">
+      <Form />
+    </div>
   );
 };
 
